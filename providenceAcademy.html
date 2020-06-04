@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Providence Academy</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Join Us For:</h1>
+        <p>6/5/20 Graduation Mass: Providence Academy</p>
+        
+        <em style="font-size: 14px;">Celebrant: Archbishop Bernard Hebda</em>
+        
+        <p style="margin: 0px;">
+            <em style="font-size: 14px;">
+                <span style="color:#ff0000;">
+                    For Friday 6/5/20<br>The video stream will begin at 2:45 PM <br>Mass will begin at 3:00 PM
+                </span>
+            </em>
+        </p>
+        <div id="saturdayMorning" style="text-align: center; background-image:url('/sites/default/files/files/5_23%20Sunday%20Mass.jpg'); background-size: 400px 225px; width: 400px; height: 225px; margin: auto;">
+            <iframe id="saturdayMorningIframe" allowfullscreen="true" allowtransparency="true" frameborder="0" height="225" scrolling="no" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fcathedralsaintpaul%2Fvideos%2F1603742963122570%2F&show_text=0&width=560" style="border:none;overflow:hidden;" width="400"></iframe><!-- when embedding facebook live stream make sure to add at the end of the src "&show_text=0&width=560"-->
+        </div>
+
+    </div>
+    <hr>
+    <script>
+        let saturdayAMiFrame = document.getElementById("saturdayMorningIframe");
+        let saturdayAM = document.getElementById("saturdayMorning");
+        var saturdayDate = new Date();
+        var saturdayMth = saturdayDate.getMonth() + 1;
+        var saturdayDy = saturdayDate.getDate();
+        var saturdayHr = saturdayDate.getHours();
+        var saturdayMin = saturdayDate.getMinutes();
+        var saturdaySec = saturdayDate.getSeconds();
+        saturdayMth = (saturdayMth < 10 ? "0" : "") + saturdayMth;
+        saturdayDy = (saturdayDy < 10 ? "0" : "") + saturdayDy;
+        saturdayHr = (saturdayHr < 10 ? "0" : "") + saturdayHr;
+        saturdayMin = (saturdayMin < 10 ? "0" : "") + saturdayMin;
+        saturdaySec = (saturdaySec < 10 ? "0" : "") + saturdaySec;
+        var saturdayStr = saturdayMth + "-" + saturdayDy + " " +  saturdayHr + ":" + saturdayMin;
+        saturdayMonth = "05";
+        saturdayDay = "30";
+        saturdayHour = "10";
+        saturdayMinutes = "00";
+        var saturdayInputStr = saturdayMonth + "-" + saturdayDay + " " + saturdayHour + ":" + saturdayMinutes;
+        saturdayGetFormattedDate();
+        function saturdayGetFormattedDate(){
+            if (saturdayStr < saturdayInputStr){
+                saturdayAMiFrame.style.visibility = "hidden";
+                console.log("hide iframe");
+            } else {
+                saturdayAMiFrame.style.visibility = "visible";
+                saturdayAM.style.backgroundImage = "none";
+                console.log("show iframe");
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
